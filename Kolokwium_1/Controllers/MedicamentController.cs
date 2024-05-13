@@ -17,9 +17,9 @@ public class MedicamentController : ControllerBase
     }
 
     [HttpGet]
-    public ActionResult<Medicament> GetMedicaments(int id)
+    public async Task<ActionResult<Medicament>> GetMedicaments(int id)
     {
-        var medicamament = _medicamentService.GetMedicament(id);
+        var medicamament =await _medicamentService.GetMedicament(id);
         return Ok(medicamament);
     }
 }
